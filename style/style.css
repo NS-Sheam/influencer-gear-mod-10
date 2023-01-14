@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@400;600;700;800&display=swap');
 /* Google font  */
-
+*{
+    margin: 0;
+    padding: 0;
+}
 :root {
     --primary-color: #3A3A3A;
     --secondary-color: #18191F;
@@ -56,8 +59,13 @@ nav ul li a {
     display: flex;
     margin-top: 30px;
     text-align: left;
+    align-items: center;
 }
-.banner .right{
+.banner .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
     width: 70%;
 }
 .banner-title{
@@ -80,17 +88,27 @@ nav ul li a {
     border: none;
     border-radius: 25px;
 }
+.banner .right{
+    display: flex;
+    justify-content: center;
+}
 .banner .img{
+    display: flex;
+    justify-content: center;
     background: url(..//images/Circle\ design.svg) no-repeat;
-    background-size: cover;
+    background-size: contain;
+}
+.banner .img img{
+    width: 100%;
 }
 
 /* ----------Banner section ends----------- */
 /* ----------Media query section starts----------- */
 /* For mini devices */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 688px) {
     body{
         padding: 0 20px;
+        max-width: 600px;
     }
     nav ul {
         flex-direction: column;
@@ -100,27 +118,64 @@ nav ul li a {
     }
     .banner{
         flex-direction: column-reverse;
+        gap: 20px;
         text-align: center;
     }
     .banner-title{
         font-size: 25px;
     }
-    .banner .right{
+    .banner-description{
+        font-size: 14px;
+        line-height: 21px;
+        margin: 15px;
+    }
+    .banner .left{
         width: 100%;
     }
     .banner-description{
         font-size: 14px;
     }
+    .banner .img{
+        width: 70%;
+    }
 }
 /* Nav section ends  */
 
 /* For medium devices */
-@media only screen and (min-width: 767px) and (max-width: 1023px){
-
+@media only screen and (min-width: 689px) and (max-width: 992px){
+    body{
+        padding: 0 20px;
+        max-width: 900px;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    .hide-menu{
+        display: none;
+    }
+    .banner{
+    }
+    .banner-title{
+        font-size: 30px;
+    }
+    .banner-description{
+        font-size: 16px;
+        line-height: 24px;
+        margin: 20px 0;
+    }
+    .banner .left{
+        width: 100%;
+    }
+    .banner-description{
+        font-size: 14px;
+    }
+    .banner .img{
+        width: 100%;
+    }
 }
 
 /* For large devices */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1312px) {
     .menu-btn {
         display: none;
     }
